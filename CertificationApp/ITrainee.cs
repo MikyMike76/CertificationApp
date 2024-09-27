@@ -2,11 +2,10 @@
 {
     public interface ITrainee
     {
-        string Name { get; }
-        string Surname { get; }
         float Weight { get; }
         int Age { get; }
-        //TraineeBase KcalBurnt(float distance, int timeOfRide, float weight);
+        void KcalBurnt(float distance, int timeOfRide, float weight);
+        void AddOutcome(float outcome);
         Statistics GetStatistics();
     }
 }

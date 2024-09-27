@@ -8,7 +8,7 @@ namespace CertificationApp
         private const float MET25_30 = 12.0f;
         private const float MET20_25 = 10.0f;
         private const float MET15_20 = 8.0f;
-        public static bool HRavgRangeOk (int HRmax, int HRavg)
+        public static bool HRavgRangeOk (int HRmax, int HRavg)  //sprawdza czy tętno w trakcie treningu było w normie
         {
             bool HRavgRangeOk;
             if (HRavg >= 0.55 *  HRmax && HRavg <= 0.75 * HRmax)
@@ -27,7 +27,7 @@ namespace CertificationApp
                 return HRavgRangeOk = false;
             }
         }
-        public static float KcalBurnt (float distance,  int timeOfRide, float weight)
+        public static float KcalBurnt (float distance,  int timeOfRide, float weight)   //liczy ilość spalonych kcal
         {
             float kcal = 0f;
             float velocity = distance / ((float)(timeOfRide/60));

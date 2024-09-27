@@ -2,10 +2,18 @@
 {
     public abstract class TraineeBase : Person, ITrainee
     {
-        public TraineeBase(string name, string surname, float weight, int age) : base(name, surname, weight, age)
+        public delegate void OutcomeAddedDelegate(object sender, EventArgs args);
+        public abstract event OutcomeAddedDelegate OutcomeAdded;
+        public void OutcomeAddedMessage(object sender, EventArgs args)
         {
+            Console.WriteLine("Wynik spalonych kcal zapisano w pliku");
         }
-        public abstract float KcalBurnt(float distance, int timeOfRide, float weight);
+        public TraineeBase(float weight, int age) : base(weight, age)
+        {
+            this.OutcomeAdded += OutcomeAddedMessage;
+        }
+        public abstract void KcalBurnt(float distance, int timeOfRide, float weight);
+        public abstract void AddOutcome(float outcome);
         public abstract Statistics GetStatistics();
     }
 }
