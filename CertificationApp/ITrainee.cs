@@ -6,9 +6,7 @@
         string Surname { get; }
         float Weight { get; }
         int Age { get; }
-        Calculations AddDistance();
-        Calculations AddTimeOfRide();
-        Calculations AddHRavg();
+        //TraineeBase KcalBurnt(float distance, int timeOfRide, float weight);
         Statistics GetStatistics();
     }
 }
