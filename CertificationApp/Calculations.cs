@@ -6,7 +6,7 @@ namespace CertificationApp
     {
         private const float MET32 = 16.0f;
         private const float MET25_30 = 12.0f;
-        private const float MET20_25 = 10.0f;
+        private const float MET20_25 = 10.0f;                   // wyniki MET (spalone kckal/min) dla poszczególnych śr. prędkości jazdy rowerem
         private const float MET15_20 = 8.0f;
         public static bool HRavgRangeOk (int HRmax, int HRavg)  //sprawdza czy tętno w trakcie treningu było w normie
         {
@@ -33,7 +33,7 @@ namespace CertificationApp
             float velocity = distance / ((float)(timeOfRide/60));
             if (velocity > 30f)
             {
-                kcal = timeOfRide *(MET32 * 3.5f * (weight / 200));
+                kcal = timeOfRide *(MET32 * 3.5f * (weight / 200));                     //spalone kcal na podstawie wyniku MET i wagi
                 Console.WriteLine($"{kcal} kcal are burnt");
                 return kcal;
             }
