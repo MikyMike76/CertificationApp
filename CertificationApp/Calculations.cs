@@ -8,26 +8,26 @@ namespace CertificationApp
         private const float MET25_30 = 12.0f;
         private const float MET20_25 = 10.0f;                   // wyniki MET (spalone kckal/min) dla poszczególnych śr. prędkości jazdy rowerem
         private const float MET15_20 = 8.0f;
-        public static bool HRavgRangeOk (int HRmax, int HRavg)  //sprawdza czy tętno w trakcie treningu było w normie
+        public static bool CheckAverageHR(int HRmax, int HRavg)  //sprawdza czy tętno w trakcie treningu było w normie
         {
-            bool HRavgRangeOk;
+            bool CheckAverageHR;
             if (HRavg >= 0.55 *  HRmax && HRavg <= 0.75 * HRmax)
             {
                 Console.WriteLine("Pefect heart rate range during this effort!");
-                return HRavgRangeOk = true;
+                return CheckAverageHR = true;
             }
             else if (HRavg > 0.75 * HRmax)
             {
                 Console.WriteLine("Too excessive physical effort!");
-                return HRavgRangeOk = false;
+                return CheckAverageHR = false;
             }
             else
             {
                 Console.WriteLine("Too weak physical effort!");
-                return HRavgRangeOk = false;
+                return CheckAverageHR = false;
             }
         }
-        public static float KcalBurnt (float distance,  int timeOfRide, float weight)   //liczy ilość spalonych kcal
+        public static float CountKcalBurnt (float distance,  int timeOfRide, float weight)   //liczy ilość spalonych kcal
         {
             float kcal = 0f;
             float velocity = distance / ((float)(timeOfRide/60));

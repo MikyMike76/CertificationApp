@@ -12,7 +12,7 @@
         {
             this.OutcomeAdded += OutcomeAddedMessage;
         }
-        public abstract void KcalBurnt(float distance, int timeOfRide, float weight);
+        public abstract void CountKcalBurnt(float distance, int timeOfRide, float weight);
         public abstract void AddOutcome(float outcome);
         public abstract Statistics GetStatistics();
     }
